@@ -20,12 +20,6 @@ namespace SampleProject.Services
             return _users.FirstOrDefault(u => u.Id == id);
         }
 
-        //to get user by username
-        public User GetUserByUsername(string username)
-        {
-            return _users.FirstOrDefault(u => u.Username == username);
-        }
-
         //to get user by email
         public User GetUserByEmail(string email)
         {
@@ -58,13 +52,17 @@ namespace SampleProject.Services
         }
 
         //to delete a user
-        public void DeleteUser(string email, string password)
+        public void DeleteUser(User user)
         {
-            var user = _users.FirstOrDefault(u => u.Email == email && u.Password == password);
-            if (user != null)
-            {
+            //var user = _users.FirstOrDefault(u => u.Email == email && u.Password == password);
+            //if (user != null)
+            //{
                 _users.Remove(user);
-            }
+        }
+
+        public User GetUser(string email, string password)
+        {
+            return _users.FirstOrDefault(u => u.Email == email || u.Password == password);
         }
     }
 }

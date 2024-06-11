@@ -6,11 +6,11 @@ namespace SampleProject.IServices
     {
         IEnumerable<User> GetAllUsers();
         User GetUserById(int id);
-        User GetUserByUsername(string username);
         User GetUserByEmail(string email);
         User GetUserByPassword(string password);
+        User GetUser(string email, string password);
         void AddUser(User user);
         void UpdateUser(User user);
-        void DeleteUser(string email, string password);
+        void DeleteUser(User user);
     }
 }
