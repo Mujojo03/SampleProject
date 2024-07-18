@@ -15,5 +15,6 @@ namespace SampleProject.IServices
         void InitializaUser(string userId); //to initializa the user
         void IncrementQuestionIndex(string userId); //to move to the next question
 
+        //has to have content of the question
     }
 }
